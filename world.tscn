@@ -1,0 +1,58 @@
+[gd_scene load_steps=8 format=3 uid="uid://pv0rkotqa1a0"]
+
+[ext_resource type="PackedScene" uid="uid://c7txh8pilnixb" path="res://ground.tscn" id="1_ys7xy"]
+[ext_resource type="PackedScene" uid="uid://cugutoo3ipie0" path="res://obstacle.tscn" id="2_6tq1h"]
+[ext_resource type="PackedScene" uid="uid://cmp47vkjdt583" path="res://Player/player.tscn" id="3_wyp2b"]
+[ext_resource type="PackedScene" uid="uid://ckfkxfafuiy7e" path="res://placeholder.tscn" id="4_wddur"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_cx5v1"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_rgk3t"]
+sky_material = SubResource("ProceduralSkyMaterial_cx5v1")
+
+[sub_resource type="Environment" id="Environment_h57pw"]
+background_mode = 2
+sky = SubResource("Sky_rgk3t")
+tonemap_mode = 2
+glow_enabled = true
+
+[node name="World" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_h57pw")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.996021, 0.00278938, 0.0890792, -0.0631612, 0.727258, 0.683452, -0.0628771, -0.686358, 0.72454, 2.10998, 89.4575, 108.408)
+shadow_enabled = true
+
+[node name="ground" parent="." instance=ExtResource("1_ys7xy")]
+transform = Transform3D(774.546, 0, 0, 0, 0.554053, 0, 0, 0, 413.113, 0, 0, 0)
+
+[node name="obstacles" type="Node3D" parent="."]
+
+[node name="obstacle" parent="obstacles" instance=ExtResource("2_6tq1h")]
+transform = Transform3D(2.62377, 0, -0.110585, 0, 1.14034, 0, 0.660506, 0, 0.439285, -4.79597, 0.368954, -8.44685)
+
+[node name="obstacle2" parent="obstacles" instance=ExtResource("2_6tq1h")]
+transform = Transform3D(6, 0, 0, 0, 1, 0, 0, 0, 1, -5.73227, 0.194017, -14.0649)
+metadata/_edit_group_ = true
+
+[node name="obstacle3" parent="obstacles" instance=ExtResource("2_6tq1h")]
+transform = Transform3D(3.30832, 0, -0.562083, 0, 3, 0, 2.24833, 0, 0.827081, -0.259775, 0.1, -12.7209)
+
+[node name="obstacle4" parent="obstacles" instance=ExtResource("2_6tq1h")]
+transform = Transform3D(3.90141, 0, 0.209097, 0, 1.57444, 0, -0.836389, 0, 0.975352, -8.30178, 0.361205, -7.82801)
+
+[node name="obstacle5" parent="obstacles" instance=ExtResource("2_6tq1h")]
+transform = Transform3D(0.835332, -0.166906, -10.3808, 0.0311203, 0.468896, -4.7437, 1.49633, 0.0834246, 5.89378, 6.17962, 1.87327, -2.52231)
+
+[node name="obstacle6" parent="obstacles" instance=ExtResource("2_6tq1h")]
+transform = Transform3D(4.63835, 0, -4.4516, 0, 4.51, 0, 8.18592, 0, 2.52239, 13.8021, 2.18537, -6.05163)
+
+[node name="Player" parent="." instance=ExtResource("3_wyp2b")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.12263, 0.234058, 0)
+
+[node name="hut?" parent="." instance=ExtResource("4_wddur")]
+transform = Transform3D(-0.558672, 0, 0.829389, 0, 1, 0, -0.829389, 0, -0.558672, -28.8061, 0.136247, 29.4836)

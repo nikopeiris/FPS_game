@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://cmp47vkjdt583"]
+
+[ext_resource type="Script" path="res://Player/player.gd" id="1_a4bxp"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_8xoum"]
+lightmap_size_hint = Vector2i(17, 14)
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ixcw8"]
+
+[node name="Player" type="CharacterBody3D"]
+script = ExtResource("1_a4bxp")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, 0)
+mesh = SubResource("CapsuleMesh_8xoum")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, 0)
+shape = SubResource("CapsuleShape3D_ixcw8")
+
+[node name="camroot" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.93883, -0.344381, 0, 0.344381, 0.93883, 0, 1.56565, 0.00418511)
+
+[node name="player_cam" type="Camera3D" parent="camroot"]
