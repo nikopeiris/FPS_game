@@ -21,7 +21,7 @@ func _unhandled_input(event):
 		if event is InputEventMouseMotion:
 			neck.rotate_y(-event.relative.x * MOUSE_SENS)
 			camera.rotate_x(-event.relative.y * MOUSE_SENS)
-			camera.rotation.x = clamp(camera.rotation.x, deg_to_rad(-50), deg_to_rad(60))
+			camera.rotation.x = clamp(camera.rotation.x, deg_to_rad(-70), deg_to_rad(60))
 
 func _physics_process(delta):
 	# Add the gravity.
@@ -32,7 +32,7 @@ func _physics_process(delta):
 	if (Input.is_action_just_released("jump") or Input.is_action_pressed("jump")) and is_on_floor():
 		velocity.y = JUMP_VELOCITY
 	
-	#handle spring
+	#handle sprint 
 	if Input.is_action_pressed("sprint") and is_on_floor():
 		speed = SPRINT
 	else:

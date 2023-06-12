@@ -1,11 +1,14 @@
-[gd_scene load_steps=4 format=3 uid="uid://cmp47vkjdt583"]
+[gd_scene load_steps=7 format=3 uid="uid://cmp47vkjdt583"]
 
 [ext_resource type="Script" path="res://Player/player.gd" id="1_a4bxp"]
+[ext_resource type="PackedScene" uid="uid://b3vlf57bqtlpo" path="res://weapon/weapon.tscn" id="2_xo5nq"]
+[ext_resource type="Script" path="res://weapon/weapon.gd" id="3_5vxgl"]
+[ext_resource type="Texture2D" uid="uid://cfm1tj77no62o" path="res://assets/reticle.png" id="4_oyx4y"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_8xoum"]
 lightmap_size_hint = Vector2i(17, 14)
 
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ixcw8"]
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_d01fg"]
 
 [node name="Player" type="CharacterBody3D"]
 script = ExtResource("1_a4bxp")
@@ -16,9 +19,49 @@ mesh = SubResource("CapsuleMesh_8xoum")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, 0)
-shape = SubResource("CapsuleShape3D_ixcw8")
+shape = SubResource("CapsuleShape3D_d01fg")
 
 [node name="camroot" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.93883, -0.344381, 0, 0.344381, 0.93883, 0, 1.56565, 0.00418511)
 
 [node name="player_cam" type="Camera3D" parent="camroot"]
+near = 0.001
+
+[node name="gun_ray" type="RayCast3D" parent="camroot/player_cam"]
+target_position = Vector3(0, 0, -1000)
+collide_with_areas = true
+
+[node name="hand" type="Node3D" parent="camroot/player_cam"]
+
+[node name="weapon" type="Node3D" parent="camroot/player_cam/hand"]
+transform = Transform3D(0.0499315, 0, 0.0026168, 0, 0.05, 0, -0.0026168, 0, 0.0499315, 0.015, -0.012, -0.04)
+
+[node name="gun" parent="camroot/player_cam/hand/weapon" instance=ExtResource("2_xo5nq")]
+script = ExtResource("3_5vxgl")
+damage = 15
+ammo = 15
+max_ammo = 15
+spare_ammo = 45
+ammo_per_shot = 1
+inf_spare_ammo = true
+full_auto = true
+reload_time = 1.0
+firerate = 0.1
+rayCast = NodePath("../../../gun_ray")
+
+[node name="reticle" type="TextureRect" parent="camroot/player_cam"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("4_oyx4y")
+expand_mode = 1
