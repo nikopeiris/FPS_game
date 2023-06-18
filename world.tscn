@@ -75,10 +75,12 @@ transform = Transform3D(4.63835, 0, -4.4516, 0, 4.51, 0, 8.18592, 0, 2.52239, 13
 transform = Transform3D(774.546, 0, 0, 0, 0.554053, 0, 0, 0, 413.113, 0, 0, 0)
 
 [node name="enemy" parent="." instance=ExtResource("6_ydt3h")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.4006, 1.32099, -14.6395)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.4006, 1.2343, -14.6395)
 
 [node name="enemy2" parent="." instance=ExtResource("6_ydt3h")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.7757, 5.27039, -10.9664)
+transform = Transform3D(-0.566349, 0, -0.824166, 0, 1, 0, 0.824166, 0, -0.566349, 13.7757, 5.27039, -10.9664)
+reload_time = 1.5
+firerate = 0.7
 
 [node name="enemy3" parent="." instance=ExtResource("6_ydt3h")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -31.6185, 1.06959, 28.953)
+transform = Transform3D(-0.510273, 0, 0.860013, 0, 1, 0, -0.860013, 0, -0.510273, -31.6185, 1.06959, 28.953)

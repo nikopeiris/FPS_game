@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://wjo5xj1nso6s"]
+
+[ext_resource type="Script" path="res://weapon/bullet_VFX.gd" id="1_hqq2a"]
+[ext_resource type="Texture2D" uid="uid://bv3rjdnnry8x3" path="res://assets/bullet_hole.png" id="2_em5lf"]
+
+[node name="Node3D" type="Node3D"]
+script = ExtResource("1_hqq2a")
+
+[node name="Decal" type="Decal" parent="."]
+transform = Transform3D(1, 0, 0, 0, -0.00373502, -0.999993, 0, 0.999993, -0.00373502, 0, 0, 0)
+size = Vector3(0.265, 1, 0.207)
+texture_albedo = ExtResource("2_em5lf")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 10.0
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

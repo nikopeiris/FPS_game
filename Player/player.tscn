@@ -10,7 +10,7 @@ lightmap_size_hint = Vector2i(17, 14)
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_d01fg"]
 
-[node name="Player" type="CharacterBody3D"]
+[node name="Player" type="CharacterBody3D" groups=["player"]]
 script = ExtResource("1_a4bxp")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]

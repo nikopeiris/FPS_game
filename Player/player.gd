@@ -1,17 +1,20 @@
 extends CharacterBody3D
 
-
+#player settings 
 const SPEED = 5.0
 const JUMP_VELOCITY = 5.5
 const MOUSE_SENS = 0.005
 const SPRINT = 8.0
 var speed = 5.0
+var health = 100
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
+#camera 
 @onready var neck = $camroot
 @onready var camera = $camroot/player_cam
 
+#mouse movements
 func _unhandled_input(event):
 	if event is InputEventMouseButton:
 		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
@@ -37,6 +40,9 @@ func _physics_process(delta):
 		speed = SPRINT
 	else:
 		speed = SPEED
+		
+	#if health <= 0:
+		#queue_free()
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.

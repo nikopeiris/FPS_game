@@ -1,5 +1,6 @@
 extends Node3D
 
+#gun settings
 @export var damage = int()
 
 @export var ammo = int()
@@ -16,6 +17,8 @@ extends Node3D
 
 @export var rayCast : NodePath
 @onready var raycast = get_node(rayCast)
+var bullethole  = preload("res://weapon/bullet_VFX.tscn")
+
 
 var can_shoot = true
 var reloading = false
@@ -35,12 +38,17 @@ func _process(_delta):
 	elif Input.is_action_just_pressed("shoot") and can_shoot and full_auto == false and paused == false:
 		fire()
 
-
+#shoot gun if called
 func fire():
 	can_shoot = false
 	ammo -= ammo_per_shot
 	if raycast.get_collider() != null and raycast.get_collider().is_in_group("enemies"):
 		raycast.get_collider().hp -= damage
+	if raycast.is_colliding():
+		if raycast.get_collider() != null and raycast.get_collider().is_in_group("enemies"):
+			create_bullethole_enemy()
+		else:
+			create_bullethole()
 	if $AnimationPlayer != null:
 		$AnimationPlayer.stop(true)
 		$AnimationPlayer.play("shooting")
@@ -48,7 +56,7 @@ func fire():
 	if reloading == false:
 		can_shoot = true
 
-
+#reload gun if called
 func reload():
 	can_shoot = false
 	reloading = true
@@ -74,3 +82,24 @@ func reload():
 	if ammo > 0:
 		can_shoot = true
 	reloading = false
+	
+func create_bullethole():
+	var collision_point = raycast.get_collision_point()
+	var b = bullethole.instantiate()
+	get_tree().get_root().add_child(b)
+	b.global_transform.origin = collision_point
+	if raycast.get_collision_normal() == Vector3(0,1,0):
+		b.look_at(raycast.get_collision_point() + raycast.get_collision_normal(), Vector3.RIGHT)
+	elif raycast.get_collision_normal() == Vector3(0,-1,0):
+		b.look_at(raycast.get_collision_point() + raycast.get_collision_normal(), Vector3.RIGHT)
+	else:
+		b.look_at(raycast.get_collision_point() + raycast.get_collision_normal())
+	
+	
+func create_bullethole_enemy():
+	var collision_point = raycast.get_collision_point()
+	var collision_normal = raycast.get_collision_normal()
+	var b = bullethole.instantiate()
+	raycast.get_collider().add_child(b)
+	b.global_transform.origin = collision_point
+	b.look_at(collision_point - collision_normal, Vector3.UP)

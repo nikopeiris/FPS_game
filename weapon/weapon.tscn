@@ -1,10 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://b3vlf57bqtlpo"]
+[gd_scene load_steps=6 format=3 uid="uid://b3vlf57bqtlpo"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_bxfl7"]
 size = Vector3(0.2, 0.2, 1)
-
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_hk7ye"]
-points = PackedVector3Array(-0.1, -0.1, -0.471748, 0.114264, 0.114264, 0.507937, 0.114264, -0.107915, 0.507937, 0.114264, 0.114264, -0.507937, -0.107915, 0.114264, 0.507937, 0.114264, -0.107915, -0.507937, -0.107915, 0.114264, -0.507937, -0.1, -0.1, 0.471748)
 
 [sub_resource type="Animation" id="Animation_48da2"]
 length = 0.001
@@ -63,9 +60,6 @@ _data = {
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = SubResource("BoxMesh_bxfl7")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-shape = SubResource("ConvexPolygonShape3D_hk7ye")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
