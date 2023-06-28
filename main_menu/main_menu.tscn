@@ -1,0 +1,46 @@
+[gd_scene load_steps=4 format=3 uid="uid://c0bkvt3bf35qa"]
+
+[ext_resource type="Script" path="res://main_menu/main_menu.gd" id="1_f7rf1"]
+[ext_resource type="Theme" uid="uid://bd1xmr5ot15py" path="res://main_menu/button_custom.tres" id="2_v42vx"]
+[ext_resource type="Texture2D" uid="uid://cm2fw700e13j" path="res://assets/menu_bg_3.png" id="3_ijn7x"]
+
+[node name="main_menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_f7rf1")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+z_index = -1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("3_ijn7x")
+
+[node name="start" type="Button" parent="."]
+layout_mode = 2
+offset_left = 22.0
+offset_top = 506.0
+offset_right = 284.0
+offset_bottom = 569.0
+theme = ExtResource("2_v42vx")
+text = "Start"
+
+[node name="quit" type="Button" parent="."]
+layout_mode = 2
+offset_left = 22.0
+offset_top = 578.0
+offset_right = 284.0
+offset_bottom = 641.0
+theme = ExtResource("2_v42vx")
+text = "Quit"
+
+[connection signal="pressed" from="start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="quit" to="." method="_on_quit_pressed"]
