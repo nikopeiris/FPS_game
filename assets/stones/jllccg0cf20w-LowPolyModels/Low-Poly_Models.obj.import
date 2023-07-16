@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://co780cfgmc4sv"
+path="res://.godot/imported/Low-Poly_Models.obj-5761f59f8e449c528f1ac008dc691eff.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Low-Poly_Models.obj-5761f59f8e449c528f1ac008dc691eff.mesh"]
+
+source_file="res://level_1/assets/stones/jllccg0cf20w-LowPolyModels/Low-Poly_Models.obj"
+dest_files=["res://.godot/imported/Low-Poly_Models.obj-5761f59f8e449c528f1ac008dc691eff.mesh", "res://.godot/imported/Low-Poly_Models.obj-5761f59f8e449c528f1ac008dc691eff.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://n6ld82lg3xnw"
+path="res://.godot/imported/SM_Leaf_21.obj-c0f663cfc745c13388935641bd25082a.mesh"
+
+[deps]
+
+files=["res://.godot/imported/SM_Leaf_21.obj-c0f663cfc745c13388935641bd25082a.mesh"]
+
+source_file="res://level_1/assets/foliage/dead_leaf/Mesh/OBJ/SM_Leaf_21.obj"
+dest_files=["res://.godot/imported/SM_Leaf_21.obj-c0f663cfc745c13388935641bd25082a.mesh", "res://.godot/imported/SM_Leaf_21.obj-c0f663cfc745c13388935641bd25082a.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
