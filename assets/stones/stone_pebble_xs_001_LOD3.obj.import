@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://1ssefv58g0if"
+path="res://.godot/imported/stone_pebble_xs_001_LOD3.obj-db1a44e841f8718cef4567d8d052d162.mesh"
+
+[deps]
+
+files=["res://.godot/imported/stone_pebble_xs_001_LOD3.obj-db1a44e841f8718cef4567d8d052d162.mesh"]
+
+source_file="res://level_1/assets/stones/stone_pebble_xs_001_LOD3.obj"
+dest_files=["res://.godot/imported/stone_pebble_xs_001_LOD3.obj-db1a44e841f8718cef4567d8d052d162.mesh", "res://.godot/imported/stone_pebble_xs_001_LOD3.obj-db1a44e841f8718cef4567d8d052d162.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
