@@ -1,0 +1,605 @@
+[gd_scene load_steps=32 format=3 uid="uid://dtg1h445bfomv"]
+
+[ext_resource type="Script" path="res://world.gd" id="1_t2w4h"]
+[ext_resource type="Texture2D" uid="uid://drnjda2nftcdy" path="res://level_1/assets/ground/grnd_text.jpg" id="2_cxee8"]
+[ext_resource type="PackedScene" uid="uid://frshj4oksd58" path="res://level_1/boulder.tscn" id="3_18f7b"]
+[ext_resource type="PackedScene" uid="uid://dxf0wfcoo152c" path="res://level_1/placeholder_house.tscn" id="3_qg3w4"]
+[ext_resource type="PackedScene" uid="uid://bobfqm2pjem0d" path="res://level_1/dead_tree.tscn" id="4_ns5su"]
+[ext_resource type="PackedScene" uid="uid://c1rolwxydgbkb" path="res://level_1/stones.tscn" id="5_6o5ij"]
+[ext_resource type="PackedScene" uid="uid://d0obfgxgy24ns" path="res://level_1/tree_stump.tscn" id="5_m6d32"]
+[ext_resource type="PackedScene" uid="uid://kdyp2408m82m" path="res://level_1/boulder_2.tscn" id="6_g48ms"]
+[ext_resource type="PackedScene" uid="uid://c5y84sxy1h11s" path="res://level_1/boulder_1.tscn" id="7_0wxsh"]
+[ext_resource type="PackedScene" uid="uid://cw0dyhv62vn7e" path="res://level_1/grass.tscn" id="10_ne55q"]
+[ext_resource type="PackedScene" uid="uid://e62sq4afnfmb" path="res://level_1/dead_leaves.tscn" id="11_lfijl"]
+[ext_resource type="PackedScene" uid="uid://2w73l6mw15x3" path="res://level_1/fence.tscn" id="12_bg3p8"]
+[ext_resource type="ArrayMesh" uid="uid://co4gsej8x887g" path="res://level_1/assets/fences/fence_open.res" id="13_44n7l"]
+[ext_resource type="PackedScene" uid="uid://cbdfr6osjayvj" path="res://level_1/fence_broken.tscn" id="14_b7s6r"]
+[ext_resource type="Script" path="res://Player/player.gd" id="29_1dyql"]
+[ext_resource type="PackedScene" uid="uid://b3vlf57bqtlpo" path="res://weapon/weapon.tscn" id="30_1i1s4"]
+[ext_resource type="Script" path="res://weapon/weapon.gd" id="31_53aaj"]
+[ext_resource type="Texture2D" uid="uid://cfm1tj77no62o" path="res://assets/reticle.png" id="32_t8h7p"]
+[ext_resource type="Texture2D" uid="uid://7ovlnndupn08" path="res://assets/gun_icon.png" id="33_8scbc"]
+[ext_resource type="Texture2D" uid="uid://c2dp8wm0sc6a6" path="res://assets/health_icon.png" id="34_gowjv"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0bmex"]
+albedo_texture = ExtResource("2_cxee8")
+uv1_triplanar = true
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_kuccd"]
+points = PackedVector3Array(-0.159804, 0.09855, -0.102344, 0.301472, 0.0838923, 0.0419838, 0.305669, 0.0468127, -0.12821, 0.202141, -0.17731, 0.0872836, -0.228769, 0.0468127, 0.11315, 0.167739, -0.168669, -0.110958, 0.288442, 0.0812952, 0.121788, -0.228769, 0.0468127, -0.12821, 0.293246, 0.0838981, -0.122399, -0.212634, 0.0902213, 0.106123, 0.0469829, -0.116959, 0.00970972, 0.228009, -0.168669, -0.0419981, 0.31431, 0.0381988, 0.061442, 0.184967, -0.151442, 0.104536, -0.185673, 0.09855, -0.12821, 0.184967, -0.151442, -0.119572, 0.297029, 0.0468127, 0.121788, -0.23741, 0.0468127, -0.102344, -0.222831, 0.0912604, -0.097105, -0.23741, 0.0468127, 0.0786697, 0.305669, 0.0381988, 0.11315, 0.208319, -0.136452, -0.1124, -0.223518, 0.0916036, 0.0745461, -0.0908393, -0.0393802, -0.0247458, 0.219477, -0.17731, -0.0419981, 0.214164, -0.159226, 0.0806738, 0.124643, -0.151442, -0.0419981, 0.31431, 0.0381988, 0.0441897, 0.297548, 0.0776278, 0.109613, 0.203986, -0.146989, 0.100254, 0.0642106, -0.125573, 0.00970972, -0.212725, 0.0902683, -0.120705)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_8xoum"]
+lightmap_size_hint = Vector2i(17, 14)
+height = 5.0
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_d01fg"]
+height = 5.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1rhx8"]
+bg_color = Color(0.545098, 0, 0, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uodhb"]
+bg_color = Color(1, 0, 0, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+
+[sub_resource type="LabelSettings" id="LabelSettings_xynvo"]
+font_size = 20
+outline_size = 2
+shadow_size = 2
+
+[sub_resource type="LabelSettings" id="LabelSettings_iv6vt"]
+font_size = 18
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_yrrv7"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_rgk3t"]
+sky_material = SubResource("ProceduralSkyMaterial_yrrv7")
+
+[sub_resource type="Environment" id="Environment_rrpjm"]
+background_mode = 2
+sky = SubResource("Sky_rgk3t")
+tonemap_mode = 2
+glow_enabled = true
+
+[node name="Level_1" type="Node3D"]
+script = ExtResource("1_t2w4h")
+
+[node name="map" type="Node3D" parent="."]
+
+[node name="nav_mesh" type="Node3D" parent="map"]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="map/nav_mesh"]
+use_collision = true
+size = Vector3(500, 1, 500)
+material = SubResource("StandardMaterial3D_0bmex")
+
+[node name="boulder" type="Node3D" parent="map/nav_mesh"]
+
+[node name="boulder3" parent="map/nav_mesh/boulder" instance=ExtResource("7_0wxsh")]
+transform = Transform3D(0.269739, 0, 0.519823, 0, 0.58564, 0, -0.519823, 0, 0.269739, 6.07028, 0.672, -10.0674)
+
+[node name="boulder2" parent="map/nav_mesh/boulder" instance=ExtResource("6_g48ms")]
+transform = Transform3D(-0.0895549, 0, -0.995982, 0, 1, 0, 0.995982, 0, -0.0895549, 27.1, 0.672, -30.266)
+
+[node name="boulder" parent="map/nav_mesh/boulder" instance=ExtResource("3_18f7b")]
+transform = Transform3D(0.423688, 0, 0.453492, 0, 0.620617, 0, -0.453492, 0, 0.423688, -14.181, 0.672343, -23.6622)
+
+[node name="boulder4" parent="map/nav_mesh/boulder" instance=ExtResource("3_18f7b")]
+transform = Transform3D(-0.512537, -0.00224542, 0.30521, -0.00586659, 0.59648, -0.00546341, -0.305163, -0.00769571, -0.512513, 43.7222, 0.672343, 36.5153)
+
+[node name="trees" type="Node3D" parent="map/nav_mesh"]
+
+[node name="tree_stump2" parent="map/nav_mesh/trees" instance=ExtResource("5_m6d32")]
+transform = Transform3D(4.20391, 0, -0.979674, 0, 4.31655, 0, 0.979674, 0, 4.20391, 59.8121, 0.595823, 24.0842)
+
+[node name="tree_stump3" parent="map/nav_mesh/trees" instance=ExtResource("5_m6d32")]
+transform = Transform3D(2.93919, 0, 3.16614, 0, 4.3201, 0, -3.16614, 0, 2.93919, 19.5214, 0.614911, 35.8259)
+
+[node name="tree_stump" parent="map/nav_mesh/trees" instance=ExtResource("5_m6d32")]
+transform = Transform3D(3.2326, 0, 0.982694, 0, 3.37867, 0, -0.982694, 0, 3.2326, -6.12319, 0.59452, 22.0599)
+
+[node name="dead_tree3" parent="map/nav_mesh/trees" instance=ExtResource("4_ns5su")]
+transform = Transform3D(-0.193456, -3.99567, 0.567282, 4.55706, -0.168728, 0.0324974, -0.00830035, 0.491793, 4.62014, -6.89012, 2.41385, 22.2262)
+
+[node name="dead_tree2" parent="map/nav_mesh/trees" instance=ExtResource("4_ns5su")]
+transform = Transform3D(4.15479, 0, 0, 0, 4.87946, 0, 0, 0, 4.15479, -11.8858, 0.558345, -15.4821)
+
+[node name="dead_tree5" parent="map/nav_mesh/trees" instance=ExtResource("4_ns5su")]
+transform = Transform3D(7.02742, 0, 0, 0, 9.01107, 0, 0, 0, 7.02742, 70.1937, 0.0532417, -12.3728)
+
+[node name="dead_tree4" parent="map/nav_mesh/trees" instance=ExtResource("4_ns5su")]
+transform = Transform3D(0.413587, 0.219008, -7.01182, -2.20865, 6.67086, 0.0780818, 6.65848, 2.19916, 0.461435, 39.0969, 0.0532417, -36.3962)
+
+[node name="dead_tree" parent="map/nav_mesh/trees" instance=ExtResource("4_ns5su")]
+transform = Transform3D(4.15479, 0, 0, 0, 4.74269, 0, 0, 0, 4.15479, 6.50295, 0.558345, -25.6021)
+
+[node name="cottage_fbx" parent="map/nav_mesh" instance=ExtResource("3_qg3w4")]
+transform = Transform3D(1.2, 0, 0, 0, 1.1, 0, 0, 0, 1.6, 52.298, 3.3, 40.231)
+
+[node name="none_nav_mesh" type="Node3D" parent="map"]
+
+[node name="stones" type="Node3D" parent="map/none_nav_mesh"]
+
+[node name="StaticBody3D16" parent="map/none_nav_mesh/stones" instance=ExtResource("5_6o5ij")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.9206, 0.653461, 36.9778)
+
+[node name="StaticBody3D15" parent="map/none_nav_mesh/stones" instance=ExtResource("5_6o5ij")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.32221, 0.653461, 33.3492)
+
+[node name="StaticBody3D14" parent="map/none_nav_mesh/stones" instance=ExtResource("5_6o5ij")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.32221, 0.653461, 21.3751)
+
+[node name="StaticBody3D13" parent="map/none_nav_mesh/stones" instance=ExtResource("5_6o5ij")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.7435, 0.653461, 21.3751)
+
+[node name="StaticBody3D12" parent="map/none_nav_mesh/stones" instance=ExtResource("5_6o5ij")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 34.7068, 0.653461, 24.7315)
+
+[node name="StaticBody3D11" parent="map/none_nav_mesh/stones" instance=ExtResource("5_6o5ij")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50.8538, 0.653461, 19.9237)
+
+[node name="StaticBody3D19" parent="map/none_nav_mesh/stones" instance=ExtResource("5_6o5ij")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 66.0958, 0.653461, 20.0634)
+
+[node name="StaticBody3D18" parent="map/none_nav_mesh/stones" instance=ExtResource("5_6o5ij")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 57.827, 0.653461, 8.339)
+
+[node name="StaticBody3D17" parent="map/none_nav_mesh/stones" instance=ExtResource("5_6o5ij")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 62.0231, 0.653461, -17.578)
+
+[node name="StaticBody3D10" parent="map/none_nav_mesh/stones" instance=ExtResource("5_6o5ij")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 59.9251, 0.653461, -5.11317)
+
+[node name="StaticBody3D21" parent="map/none_nav_mesh/stones" instance=ExtResource("5_6o5ij")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 34.1317, 0.653461, -34.4843)
+
+[node name="StaticBody3D20" parent="map/none_nav_mesh/stones" instance=ExtResource("5_6o5ij")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48.0668, 0.653461, -34.4843)
+
+[node name="StaticBody3D9" parent="map/none_nav_mesh/stones" instance=ExtResource("5_6o5ij")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48.0668, 0.653461, -23.91)
+
+[node name="StaticBody3D8" parent="map/none_nav_mesh/stones" instance=ExtResource("5_6o5ij")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 33.4021, 0.653461, -22.394)
+
+[node name="StaticBody3D7" parent="map/none_nav_mesh/stones" instance=ExtResource("5_6o5ij")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.0896, 0.653461, -26.1287)
+
+[node name="StaticBody3D6" parent="map/none_nav_mesh/stones" instance=ExtResource("5_6o5ij")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.82484, 0.653461, -26.1287)
+
+[node name="StaticBody3D5" parent="map/none_nav_mesh/stones" instance=ExtResource("5_6o5ij")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.5442, 0.653461, -26.1287)
+
+[node name="StaticBody3D4" parent="map/none_nav_mesh/stones" instance=ExtResource("5_6o5ij")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.5442, 0.653461, -15.6623)
+
+[node name="StaticBody3D2" parent="map/none_nav_mesh/stones" instance=ExtResource("5_6o5ij")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.275447, 0.653461, -4.21288)
+
+[node name="StaticBody3D3" parent="map/none_nav_mesh/stones" instance=ExtResource("5_6o5ij")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.275447, 0.653461, -15.6623)
+
+[node name="StaticBody3D24" parent="map/none_nav_mesh/stones" instance=ExtResource("5_6o5ij")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.4775, 0.452991, 29.1153)
+
+[node name="StaticBody3D23" parent="map/none_nav_mesh/stones" instance=ExtResource("5_6o5ij")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.76242, 0.452991, 17.7612)
+
+[node name="StaticBody3D22" parent="map/none_nav_mesh/stones" instance=ExtResource("5_6o5ij")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.76242, 0.452991, 9.369)
+
+[node name="StaticBody3D26" parent="map/none_nav_mesh/stones" instance=ExtResource("5_6o5ij")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 45.5399, 0.452991, 35.0392)
+
+[node name="StaticBody3D25" parent="map/none_nav_mesh/stones" instance=ExtResource("5_6o5ij")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 65.4096, 0.452991, 32.6943)
+
+[node name="StaticBody3D" parent="map/none_nav_mesh/stones" instance=ExtResource("5_6o5ij")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.452991, 9.369)
+
+[node name="foliage" parent="map/none_nav_mesh" instance=ExtResource("10_ne55q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 31.4, 0.501226, 4.6)
+
+[node name="dead_leaf" type="Node3D" parent="map/none_nav_mesh"]
+
+[node name="dead_leaf5" parent="map/none_nav_mesh/dead_leaf" instance=ExtResource("11_lfijl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.1515, 0.581766, 22.1759)
+
+[node name="dead_leaf3" parent="map/none_nav_mesh/dead_leaf" instance=ExtResource("11_lfijl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 39.8359, 0.581766, -23.9989)
+
+[node name="dead_leaf4" parent="map/none_nav_mesh/dead_leaf" instance=ExtResource("11_lfijl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 70.493, 0.581766, -12.8968)
+
+[node name="dead_leaf" parent="map/none_nav_mesh/dead_leaf" instance=ExtResource("11_lfijl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.2, 0.581766, -15.1)
+
+[node name="dead_leaf2" parent="map/none_nav_mesh/dead_leaf" instance=ExtResource("11_lfijl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.52953, 0.581766, -25.8913)
+
+[node name="fences" type="Node3D" parent="map/none_nav_mesh"]
+
+[node name="fence" parent="map/none_nav_mesh/fences" instance=ExtResource("12_bg3p8")]
+transform = Transform3D(-2.05757e-07, 0, -4.70717, 0, 4.70717, 0, 4.70717, 0, -2.05757e-07, -20.011, 2.05297, 7.01932)
+
+[node name="fence2" parent="map/none_nav_mesh/fences" instance=ExtResource("12_bg3p8")]
+transform = Transform3D(-2.05757e-07, 0, -4.70717, 0, 4.70717, 0, 4.70717, 0, -2.05757e-07, -20.011, 2.05297, 12.5764)
+
+[node name="fence3" parent="map/none_nav_mesh/fences" instance=ExtResource("12_bg3p8")]
+transform = Transform3D(-2.05757e-07, 0, -4.70717, 0, 4.70717, 0, 4.70717, 0, -2.05757e-07, -20.011, 2.00379, 18.1336)
+
+[node name="fence5" parent="map/none_nav_mesh/fences" instance=ExtResource("12_bg3p8")]
+transform = Transform3D(-2.05757e-07, 0, -4.70717, 0, 4.70717, 0, 4.70717, 0, -2.05757e-07, -20.011, 2.00379, 29.1003)
+
+[node name="fence6" parent="map/none_nav_mesh/fences" instance=ExtResource("12_bg3p8")]
+transform = Transform3D(-2.05757e-07, 0, -4.70717, 0, 4.70717, 0, 4.70717, 0, -2.05757e-07, -20.011, 2.00379, 34.682)
+
+[node name="fence7" parent="map/none_nav_mesh/fences" instance=ExtResource("12_bg3p8")]
+transform = Transform3D(-2.05757e-07, 0, -4.70717, 0, 4.70717, 0, 4.70717, 0, -2.05757e-07, -20.011, 2.00379, 40.1161)
+
+[node name="fence8" parent="map/none_nav_mesh/fences" instance=ExtResource("12_bg3p8")]
+transform = Transform3D(-2.05757e-07, 0, -4.70717, 0, 4.70717, 0, 4.70717, 0, -2.05757e-07, -20.011, 2.00379, 45.747)
+
+[node name="fence9" parent="map/none_nav_mesh/fences" instance=ExtResource("12_bg3p8")]
+transform = Transform3D(-2.05757e-07, 0, -4.70717, 0, 4.70717, 0, 4.70717, 0, -2.05757e-07, -20.011, 2.00379, 51.2058)
+
+[node name="fence10" parent="map/none_nav_mesh/fences" instance=ExtResource("12_bg3p8")]
+transform = Transform3D(-4.70713, 0, 0.018485, 0, 4.70717, 0, -0.018485, 0, -4.70713, 4.89234, 2.00379, 53.9065)
+
+[node name="fence11" parent="map/none_nav_mesh/fences" instance=ExtResource("12_bg3p8")]
+transform = Transform3D(-4.70713, 0, 0.018485, 0, 4.70717, 0, -0.018485, 0, -4.70713, -0.689321, 2.00379, 53.8845)
+
+[node name="fence12" parent="map/none_nav_mesh/fences" instance=ExtResource("12_bg3p8")]
+transform = Transform3D(-4.70713, 0, 0.018485, 0, 4.70717, 0, -0.018485, 0, -4.70713, -6.12345, 2.00379, 53.8632)
+
+[node name="fence13" parent="map/none_nav_mesh/fences" instance=ExtResource("12_bg3p8")]
+transform = Transform3D(-4.70713, 0, 0.018485, 0, 4.70717, 0, -0.018485, 0, -4.70713, -11.7543, 2.00379, 53.8411)
+
+[node name="fence14" parent="map/none_nav_mesh/fences" instance=ExtResource("12_bg3p8")]
+transform = Transform3D(-4.70713, 0, 0.018485, 0, 4.70717, 0, -0.018485, 0, -4.70713, -17.213, 2.00379, 53.8196)
+
+[node name="fence15" parent="map/none_nav_mesh/fences" instance=ExtResource("12_bg3p8")]
+transform = Transform3D(-4.70713, 0, 0.018485, 0, 4.70717, 0, -0.018485, 0, -4.70713, 32.5545, 2.00379, 53.9065)
+
+[node name="fence16" parent="map/none_nav_mesh/fences" instance=ExtResource("12_bg3p8")]
+transform = Transform3D(-4.70713, 0, 0.018485, 0, 4.70717, 0, -0.018485, 0, -4.70713, 26.9728, 2.00379, 53.8845)
+
+[node name="fence17" parent="map/none_nav_mesh/fences" instance=ExtResource("12_bg3p8")]
+transform = Transform3D(-4.70713, 0, 0.018485, 0, 4.70717, 0, -0.018485, 0, -4.70713, 21.5387, 2.00379, 53.8632)
+
+[node name="fence18" parent="map/none_nav_mesh/fences" instance=ExtResource("12_bg3p8")]
+transform = Transform3D(-4.70713, 0, 0.018485, 0, 4.70717, 0, -0.018485, 0, -4.70713, 15.9078, 2.00379, 53.8411)
+
+[node name="fence19" parent="map/none_nav_mesh/fences" instance=ExtResource("12_bg3p8")]
+transform = Transform3D(-4.70713, 0, 0.018485, 0, 4.70717, 0, -0.018485, 0, -4.70713, 10.4491, 2.00379, 53.8196)
+
+[node name="fence20" parent="map/none_nav_mesh/fences" instance=ExtResource("12_bg3p8")]
+transform = Transform3D(-4.70713, 0, 0.018485, 0, 4.70717, 0, -0.018485, 0, -4.70713, 60.2321, 2.00379, 53.9065)
+
+[node name="fence21" parent="map/none_nav_mesh/fences" instance=ExtResource("12_bg3p8")]
+transform = Transform3D(-4.70713, 0, 0.018485, 0, 4.70717, 0, -0.018485, 0, -4.70713, 54.6505, 2.00379, 53.8845)
+
+[node name="fence22" parent="map/none_nav_mesh/fences" instance=ExtResource("12_bg3p8")]
+transform = Transform3D(-4.70713, 0, 0.018485, 0, 4.70717, 0, -0.018485, 0, -4.70713, 49.2163, 2.00379, 53.8632)
+
+[node name="fence23" parent="map/none_nav_mesh/fences" instance=ExtResource("12_bg3p8")]
+transform = Transform3D(-4.70713, 0, 0.018485, 0, 4.70717, 0, -0.018485, 0, -4.70713, 43.5855, 2.00379, 53.8411)
+
+[node name="fence24" parent="map/none_nav_mesh/fences" instance=ExtResource("12_bg3p8")]
+transform = Transform3D(-4.70713, 0, 0.018485, 0, 4.70717, 0, -0.018485, 0, -4.70713, 38.1268, 2.00379, 53.8196)
+
+[node name="fence25" parent="map/none_nav_mesh/fences" instance=ExtResource("12_bg3p8")]
+transform = Transform3D(-0.048389, 0, -4.70692, 0, 4.70717, 0, 4.70692, 0, -0.048389, 79.6907, 2.00379, 45.2798)
+
+[node name="fence26" parent="map/none_nav_mesh/fences" instance=ExtResource("12_bg3p8")]
+transform = Transform3D(-0.048389, 0, -4.70692, 0, 4.70717, 0, 4.70692, 0, -0.048389, 79.6333, 2.00379, 50.8612)
+
+[node name="fence30" parent="map/none_nav_mesh/fences" instance=ExtResource("12_bg3p8")]
+transform = Transform3D(-0.048389, 0, -4.70692, 0, 4.70717, 0, 4.70692, 0, -0.048389, 79.6907, 2.00379, 34.0783)
+
+[node name="fence31" parent="map/none_nav_mesh/fences" instance=ExtResource("12_bg3p8")]
+transform = Transform3D(-0.048389, 0, -4.70692, 0, 4.70717, 0, 4.70692, 0, -0.048389, 79.6333, 2.00379, 39.6597)
+
+[node name="fence32" parent="map/none_nav_mesh/fences" instance=ExtResource("12_bg3p8")]
+transform = Transform3D(-0.048389, 0, -4.70692, 0, 4.70717, 0, 4.70692, 0, -0.048389, 79.6907, 2.00379, 22.8308)
+
+[node name="fence33" parent="map/none_nav_mesh/fences" instance=ExtResource("12_bg3p8")]
+transform = Transform3D(-0.048389, 0, -4.70692, 0, 4.70717, 0, 4.70692, 0, -0.048389, 79.6333, 2.00379, 28.4122)
+
+[node name="fence34" parent="map/none_nav_mesh/fences" instance=ExtResource("12_bg3p8")]
+transform = Transform3D(-0.048389, 0, -4.70692, 0, 4.70717, 0, 4.70692, 0, -0.048389, 79.6921, 2.00379, 11.8174)
+
+[node name="fence35" parent="map/none_nav_mesh/fences" instance=ExtResource("12_bg3p8")]
+transform = Transform3D(-0.048389, 0, -4.70692, 0, 4.70717, 0, 4.70692, 0, -0.048389, 79.6348, 2.00379, 17.3988)
+
+[node name="fence36" parent="map/none_nav_mesh/fences" instance=ExtResource("12_bg3p8")]
+transform = Transform3D(-0.048389, 0, -4.70692, 0, 4.70717, 0, 4.70692, 0, -0.048389, 79.6921, 2.00379, 1.00025)
+
+[node name="fence37" parent="map/none_nav_mesh/fences" instance=ExtResource("12_bg3p8")]
+transform = Transform3D(-0.048389, 0, -4.70692, 0, 4.70717, 0, 4.70692, 0, -0.048389, 79.6348, 2.00379, 6.58167)
+
+[node name="fence38" parent="map/none_nav_mesh/fences" instance=ExtResource("12_bg3p8")]
+transform = Transform3D(-0.048389, 0, -4.70692, 0, 4.70717, 0, 4.70692, 0, -0.048389, 79.6921, 2.00379, -10.1701)
+
+[node name="fence39" parent="map/none_nav_mesh/fences" instance=ExtResource("12_bg3p8")]
+transform = Transform3D(-0.048389, 0, -4.70692, 0, 4.70717, 0, 4.70692, 0, -0.048389, 79.6348, 2.00379, -4.58864)
+
+[node name="fence40" parent="map/none_nav_mesh/fences" instance=ExtResource("12_bg3p8")]
+transform = Transform3D(-0.048389, 0, -4.70692, 0, 4.70717, 0, 4.70692, 0, -0.048389, 79.6974, 2.07139, -21.0779)
+
+[node name="fence41" parent="map/none_nav_mesh/fences" instance=ExtResource("12_bg3p8")]
+transform = Transform3D(-0.048389, 0, -4.70692, 0, 4.70717, 0, 4.70692, 0, -0.048389, 79.6401, 2.07139, -15.4965)
+
+[node name="fence42" parent="map/none_nav_mesh/fences" instance=ExtResource("12_bg3p8")]
+transform = Transform3D(-0.048389, 0, -4.70692, 0, 4.70717, 0, 4.70692, 0, -0.048389, 79.6545, 2.07139, -32.4919)
+
+[node name="fence43" parent="map/none_nav_mesh/fences" instance=ExtResource("12_bg3p8")]
+transform = Transform3D(-0.048389, 0, -4.70692, 0, 4.70717, 0, 4.70692, 0, -0.048389, 79.5971, 2.07139, -26.9105)
+
+[node name="fence44" parent="map/none_nav_mesh/fences" instance=ExtResource("12_bg3p8")]
+transform = Transform3D(-0.048389, 0, -4.70692, 0, 4.70717, 0, 4.70692, 0, -0.048389, 79.6545, 2.07139, -43.5158)
+
+[node name="fence45" parent="map/none_nav_mesh/fences" instance=ExtResource("12_bg3p8")]
+transform = Transform3D(-0.048389, 0, -4.70692, 0, 4.70717, 0, 4.70692, 0, -0.048389, 79.5971, 2.07139, -37.9343)
+
+[node name="fence46" parent="map/none_nav_mesh/fences" instance=ExtResource("12_bg3p8")]
+transform = Transform3D(4.70715, 0, -0.01487, 0, 4.70717, 0, 0.01487, 0, 4.70715, 71.2023, 2.07139, -46.4166)
+
+[node name="fence47" parent="map/none_nav_mesh/fences" instance=ExtResource("12_bg3p8")]
+transform = Transform3D(4.70715, 0, -0.01487, 0, 4.70717, 0, 0.01487, 0, 4.70715, 76.784, 2.07139, -46.3989)
+
+[node name="fence48" parent="map/none_nav_mesh/fences" instance=ExtResource("12_bg3p8")]
+transform = Transform3D(4.70715, 0, -0.01487, 0, 4.70717, 0, 0.01487, 0, 4.70715, 60.1959, 2.07139, -46.4166)
+
+[node name="fence49" parent="map/none_nav_mesh/fences" instance=ExtResource("12_bg3p8")]
+transform = Transform3D(4.70715, 0, -0.01487, 0, 4.70717, 0, 0.01487, 0, 4.70715, 65.7776, 2.07139, -46.3989)
+
+[node name="fence50" parent="map/none_nav_mesh/fences" instance=ExtResource("12_bg3p8")]
+transform = Transform3D(4.70715, 0, -0.01487, 0, 4.70717, 0, 0.01487, 0, 4.70715, 49.0643, 2.07139, -46.4166)
+
+[node name="fence51" parent="map/none_nav_mesh/fences" instance=ExtResource("12_bg3p8")]
+transform = Transform3D(4.70715, 0, -0.01487, 0, 4.70717, 0, 0.01487, 0, 4.70715, 54.646, 2.07139, -46.3989)
+
+[node name="fence52" parent="map/none_nav_mesh/fences" instance=ExtResource("12_bg3p8")]
+transform = Transform3D(4.70715, 0, -0.01487, 0, 4.70717, 0, 0.01487, 0, 4.70715, 37.6948, 2.07139, -46.4166)
+
+[node name="fence53" parent="map/none_nav_mesh/fences" instance=ExtResource("12_bg3p8")]
+transform = Transform3D(4.70715, 0, -0.01487, 0, 4.70717, 0, 0.01487, 0, 4.70715, 43.2765, 2.07139, -46.3989)
+
+[node name="fence54" parent="map/none_nav_mesh/fences" instance=ExtResource("12_bg3p8")]
+transform = Transform3D(4.70715, 0, -0.01487, 0, 4.70717, 0, 0.01487, 0, 4.70715, 26.4398, 2.07139, -46.4166)
+
+[node name="fence55" parent="map/none_nav_mesh/fences" instance=ExtResource("12_bg3p8")]
+transform = Transform3D(4.70715, 0, -0.01487, 0, 4.70717, 0, 0.01487, 0, 4.70715, 32.0215, 2.07139, -46.3989)
+
+[node name="fence56" parent="map/none_nav_mesh/fences" instance=ExtResource("12_bg3p8")]
+transform = Transform3D(4.70715, 0, -0.01487, 0, 4.70717, 0, 0.01487, 0, 4.70715, 15.2705, 2.07139, -46.4166)
+
+[node name="fence57" parent="map/none_nav_mesh/fences" instance=ExtResource("12_bg3p8")]
+transform = Transform3D(4.70715, 0, -0.01487, 0, 4.70717, 0, 0.01487, 0, 4.70715, 20.8522, 2.07139, -46.3989)
+
+[node name="fence58" parent="map/none_nav_mesh/fences" instance=ExtResource("12_bg3p8")]
+transform = Transform3D(4.70715, 0, -0.01487, 0, 4.70717, 0, 0.01487, 0, 4.70715, 4.11702, 2.07139, -46.4166)
+
+[node name="fence59" parent="map/none_nav_mesh/fences" instance=ExtResource("12_bg3p8")]
+transform = Transform3D(4.70715, 0, -0.01487, 0, 4.70717, 0, 0.01487, 0, 4.70715, 9.69872, 2.07139, -46.3989)
+
+[node name="fence60" parent="map/none_nav_mesh/fences" instance=ExtResource("12_bg3p8")]
+transform = Transform3D(4.70715, 0, -0.01487, 0, 4.70717, 0, 0.01487, 0, 4.70715, -6.88801, 2.07139, -46.4166)
+
+[node name="fence61" parent="map/none_nav_mesh/fences" instance=ExtResource("12_bg3p8")]
+transform = Transform3D(4.70715, 0, -0.01487, 0, 4.70717, 0, 0.01487, 0, 4.70715, -1.30631, 2.07139, -46.3989)
+
+[node name="fence62" parent="map/none_nav_mesh/fences" instance=ExtResource("12_bg3p8")]
+transform = Transform3D(1.16139, 0, 4.56165, 0, 4.70717, 0, -4.56165, 0, 1.16139, -16.7715, 2.07139, -43.6186)
+
+[node name="fence64" parent="map/none_nav_mesh/fences" instance=ExtResource("12_bg3p8")]
+transform = Transform3D(0.0799336, 0, 4.70649, 0, 4.70717, 0, -4.70649, 0, 0.0799336, -20.223, 2.07139, -5.11689)
+
+[node name="fence65" parent="map/none_nav_mesh/fences" instance=ExtResource("12_bg3p8")]
+transform = Transform3D(0.0799336, 0, 4.70649, 0, 4.70717, 0, -4.70649, 0, 0.0799336, -20.223, 2.07139, -10.6531)
+
+[node name="fence66" parent="map/none_nav_mesh/fences" instance=ExtResource("12_bg3p8")]
+transform = Transform3D(0.0799336, 0, 4.70649, 0, 4.70717, 0, -4.70649, 0, 0.0799336, -20.223, 2.07139, -16.2149)
+
+[node name="fence67" parent="map/none_nav_mesh/fences" instance=ExtResource("12_bg3p8")]
+transform = Transform3D(0.0799336, 0, 4.70649, 0, 4.70717, 0, -4.70649, 0, 0.0799336, -20.223, 2.07139, -21.9431)
+
+[node name="fence68" parent="map/none_nav_mesh/fences" instance=ExtResource("12_bg3p8")]
+transform = Transform3D(0.0799336, 0, 4.70649, 0, 4.70717, 0, -4.70649, 0, 0.0799336, -20.223, 2.07139, -27.539)
+
+[node name="fence69" parent="map/none_nav_mesh/fences" instance=ExtResource("12_bg3p8")]
+transform = Transform3D(0.0799336, 0, 4.70649, 0, 4.70717, 0, -4.70649, 0, 0.0799336, -20.223, 2.07139, -33.1426)
+
+[node name="fence70" parent="map/none_nav_mesh/fences" instance=ExtResource("12_bg3p8")]
+transform = Transform3D(2.26748, 0, 4.12504, 0, 4.70717, 0, -4.12504, 0, 2.26748, -18.7449, 2.07139, -38.7188)
+
+[node name="fence63" parent="map/none_nav_mesh/fences" instance=ExtResource("12_bg3p8")]
+transform = Transform3D(4.70715, 0, -0.01487, 0, 4.70717, 0, 0.01487, 0, 4.70715, -12.9049, 2.07139, -46.3989)
+
+[node name="fence27" parent="map/none_nav_mesh/fences" instance=ExtResource("12_bg3p8")]
+transform = Transform3D(-4.70713, 0, 0.018485, 0, 4.70717, 0, -0.018485, 0, -4.70713, 76.6109, 2.00379, 53.8632)
+
+[node name="fence28" parent="map/none_nav_mesh/fences" instance=ExtResource("12_bg3p8")]
+transform = Transform3D(-4.70713, 0, 0.018485, 0, 4.70717, 0, -0.018485, 0, -4.70713, 70.9801, 2.00379, 53.8411)
+
+[node name="fence29" parent="map/none_nav_mesh/fences" instance=ExtResource("12_bg3p8")]
+transform = Transform3D(-4.70713, 0, 0.018485, 0, 4.70717, 0, -0.018485, 0, -4.70713, 65.5214, 2.00379, 53.8196)
+
+[node name="gate_open" type="StaticBody3D" parent="map/none_nav_mesh/fences"]
+transform = Transform3D(-5.52718e-07, 0, -12.6447, 0, 12.6447, 0, 12.6447, 0, -5.52718e-07, -20.9882, 2.14276, 0.52284)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="map/none_nav_mesh/fences/gate_open"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
+mesh = ExtResource("13_44n7l")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/none_nav_mesh/fences/gate_open"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
+shape = SubResource("ConvexPolygonShape3D_kuccd")
+
+[node name="broken_fence" parent="map/none_nav_mesh/fences" instance=ExtResource("14_b7s6r")]
+transform = Transform3D(-4.85265e-07, 0, -10.8076, 0, 13.9831, 0, 11.1016, 0, -4.72415e-07, -20.295, 1.58952, 23.5356)
+
+[node name="Player" type="CharacterBody3D" parent="." groups=["player"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.94102, 0)
+script = ExtResource("29_1dyql")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Player"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, 0)
+mesh = SubResource("CapsuleMesh_8xoum")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Player"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, 0)
+shape = SubResource("CapsuleShape3D_d01fg")
+
+[node name="camroot" type="Node3D" parent="Player"]
+transform = Transform3D(1, 0, 0, 0, 0.959343, -0.282241, 0, 0.282241, 0.959343, 0, 3.04417, 0)
+
+[node name="player_cam" type="Camera3D" parent="Player/camroot"]
+near = 0.001
+
+[node name="gun_ray" type="RayCast3D" parent="Player/camroot/player_cam"]
+target_position = Vector3(0, 0, -1000)
+collide_with_areas = true
+
+[node name="hand" type="Node3D" parent="Player/camroot/player_cam"]
+
+[node name="weapon" type="Node3D" parent="Player/camroot/player_cam/hand"]
+transform = Transform3D(0.0499315, 0, 0.0026168, 0, 0.05, 0, -0.0026168, 0, 0.0499315, 0.015, -0.012, -0.04)
+
+[node name="gun" parent="Player/camroot/player_cam/hand/weapon" instance=ExtResource("30_1i1s4")]
+script = ExtResource("31_53aaj")
+damage = 10
+ammo = 30
+max_ammo = 30
+spare_ammo = 150
+ammo_per_shot = 1
+full_auto = true
+reload_time = 1.0
+firerate = 0.1
+rayCast = NodePath("../../../gun_ray")
+
+[node name="HUD" type="Control" parent="Player/camroot/player_cam"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="reticle" type="TextureRect" parent="Player/camroot/player_cam/HUD"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("32_t8h7p")
+expand_mode = 1
+
+[node name="ProgressBar" type="ProgressBar" parent="Player/camroot/player_cam/HUD"]
+layout_mode = 0
+offset_left = 798.0
+offset_top = 616.0
+offset_right = 1141.0
+offset_bottom = 637.0
+mouse_filter = 2
+theme_override_styles/background = SubResource("StyleBoxFlat_1rhx8")
+theme_override_styles/fill = SubResource("StyleBoxFlat_uodhb")
+step = 1.0
+show_percentage = false
+
+[node name="gun_icon" type="TextureRect" parent="Player/camroot/player_cam/HUD"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -123.0
+offset_top = -84.0
+offset_right = -22.0
+offset_bottom = -44.0
+grow_horizontal = 0
+grow_vertical = 0
+texture = ExtResource("33_8scbc")
+expand_mode = 2
+
+[node name="ammo" type="Label" parent="Player/camroot/player_cam/HUD"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -174.0
+offset_top = 226.0
+offset_right = -134.0
+offset_bottom = 257.0
+grow_horizontal = 0
+grow_vertical = 2
+text = "30"
+label_settings = SubResource("LabelSettings_xynvo")
+horizontal_alignment = 1
+
+[node name="text_spare_ammo" type="Label" parent="Player/camroot/player_cam/HUD"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -174.0
+offset_top = 253.0
+offset_right = -134.0
+offset_bottom = 284.0
+grow_horizontal = 0
+grow_vertical = 2
+text = "30
+"
+label_settings = SubResource("LabelSettings_iv6vt")
+horizontal_alignment = 1
+
+[node name="health_icon" type="TextureRect" parent="Player/camroot/player_cam/HUD"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 182.0
+offset_top = -40.0
+offset_right = 222.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("34_gowjv")
+expand_mode = 1
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.78563, 0.618696, 0, -0.618696, 0.78563, 0, 47.1, 118.239)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_rrpjm")
+
+[connection signal="player_death" from="Player" to="Player/camroot/player_cam/hand/weapon/gun" method="_on_player_player_death" flags=18]

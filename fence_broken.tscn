@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://cbdfr6osjayvj"]
+
+[ext_resource type="ArrayMesh" uid="uid://dl02010hswncm" path="res://level_1/assets/fences/broken_fence.res" id="1_a1avc"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_lom7e"]
+size = Vector3(0.540927, 0.0697381, 0.243558)
+
+[node name="StaticBody3D" type="StaticBody3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
+mesh = ExtResource("1_a1avc")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0.0187412, -0.0123814)
+shape = SubResource("BoxShape3D_lom7e")
