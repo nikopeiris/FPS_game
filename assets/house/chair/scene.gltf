@@ -1,0 +1,394 @@
+{
+  "accessors": [
+    {
+      "bufferView": 2,
+      "componentType": 5126,
+      "count": 6624,
+      "max": [
+        9.273695945739746,
+        12.513410568237305,
+        39.29853820800781
+      ],
+      "min": [
+        -9.292733192443848,
+        -7.148909091949463,
+        0.7252203822135925
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 2,
+      "byteOffset": 79488,
+      "componentType": 5126,
+      "count": 6624,
+      "max": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "min": [
+        -1.0,
+        -1.0,
+        -1.0
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 3,
+      "componentType": 5126,
+      "count": 6624,
+      "max": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "min": [
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0
+      ],
+      "type": "VEC4"
+    },
+    {
+      "bufferView": 1,
+      "componentType": 5126,
+      "count": 6624,
+      "max": [
+        0.592426598072052,
+        2.3195250034332275
+      ],
+      "min": [
+        -0.06366667151451111,
+        -0.8330000042915344
+      ],
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 0,
+      "componentType": 5125,
+      "count": 14556,
+      "type": "SCALAR"
+    },
+    {
+      "bufferView": 2,
+      "byteOffset": 158976,
+      "componentType": 5126,
+      "count": 6734,
+      "max": [
+        9.65328311920166,
+        8.168268203735352,
+        20.089338302612305
+      ],
+      "min": [
+        -9.672316551208496,
+        -8.815462112426758,
+        18.261049270629883
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 2,
+      "byteOffset": 239784,
+      "componentType": 5126,
+      "count": 6734,
+      "max": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "min": [
+        -1.0,
+        -1.0,
+        -1.0
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 3,
+      "byteOffset": 105984,
+      "componentType": 5126,
+      "count": 6734,
+      "max": [
+        1.0,
+        1.0,
+        0.45449721813201904,
+        1.0
+      ],
+      "min": [
+        -1.0,
+        -1.0,
+        -0.45450204610824585,
+        -1.0
+      ],
+      "type": "VEC4"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 52992,
+      "componentType": 5126,
+      "count": 6734,
+      "max": [
+        2.82898211479187,
+        0.4426119923591614
+      ],
+      "min": [
+        -0.3832609951496124,
+        -0.44235318899154663
+      ],
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 0,
+      "byteOffset": 58224,
+      "componentType": 5125,
+      "count": 15480,
+      "type": "SCALAR"
+    }
+  ],
+  "asset": {
+    "extras": {
+      "author": "jimbogies (https://sketchfab.com/jimbogies)",
+      "license": "CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)",
+      "source": "https://sketchfab.com/3d-models/free-chair-for-kitchen-or-dining-room-e88688d5bd4e463ca3dde22a6c1da15e",
+      "title": "Free Chair for Kitchen or Dining Room"
+    },
+    "generator": "Sketchfab-15.26.0",
+    "version": "2.0"
+  },
+  "bufferViews": [
+    {
+      "buffer": 0,
+      "byteLength": 120144,
+      "name": "floatBufferViews",
+      "target": 34963
+    },
+    {
+      "buffer": 0,
+      "byteLength": 106864,
+      "byteOffset": 120144,
+      "byteStride": 8,
+      "name": "floatBufferViews",
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteLength": 320592,
+      "byteOffset": 227008,
+      "byteStride": 12,
+      "name": "floatBufferViews",
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteLength": 213728,
+      "byteOffset": 547600,
+      "byteStride": 16,
+      "name": "floatBufferViews",
+      "target": 34962
+    }
+  ],
+  "buffers": [
+    {
+      "byteLength": 761328,
+      "uri": "scene.bin"
+    }
+  ],
+  "images": [
+    {
+      "uri": "textures/Wood_Diffuse_baseColor.jpeg"
+    },
+    {
+      "uri": "textures/Wood_Diffuse_metallicRoughness.png"
+    },
+    {
+      "uri": "textures/Wood_Diffuse_normal.png"
+    },
+    {
+      "uri": "textures/Fabric_Diffuse_baseColor.jpeg"
+    },
+    {
+      "uri": "textures/Fabric_Diffuse_normal.png"
+    }
+  ],
+  "materials": [
+    {
+      "name": "Wood_Diffuse",
+      "normalTexture": {
+        "index": 2
+      },
+      "pbrMetallicRoughness": {
+        "baseColorTexture": {
+          "index": 0
+        },
+        "metallicFactor": 0.0,
+        "metallicRoughnessTexture": {
+          "index": 1
+        }
+      }
+    },
+    {
+      "name": "Fabric_Diffuse",
+      "normalTexture": {
+        "index": 4,
+        "scale": 0.5348587729029269
+      },
+      "pbrMetallicRoughness": {
+        "baseColorTexture": {
+          "index": 3
+        },
+        "metallicFactor": 0.0,
+        "roughnessFactor": 0.8822884031646572
+      }
+    }
+  ],
+  "meshes": [
+    {
+      "name": "Material2",
+      "primitives": [
+        {
+          "attributes": {
+            "NORMAL": 1,
+            "POSITION": 0,
+            "TANGENT": 2,
+            "TEXCOORD_0": 3
+          },
+          "indices": 4,
+          "material": 0,
+          "mode": 4
+        }
+      ]
+    },
+    {
+      "name": "Material2",
+      "primitives": [
+        {
+          "attributes": {
+            "NORMAL": 6,
+            "POSITION": 5,
+            "TANGENT": 7,
+            "TEXCOORD_0": 8
+          },
+          "indices": 9,
+          "material": 1,
+          "mode": 4
+        }
+      ]
+    }
+  ],
+  "nodes": [
+    {
+      "children": [
+        1
+      ],
+      "matrix": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        2.220446049250313e-16,
+        -1.0,
+        0.0,
+        0.0,
+        1.0,
+        2.220446049250313e-16,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "name": "Sketchfab_model"
+    },
+    {
+      "children": [
+        2,
+        3,
+        4
+      ],
+      "name": "Collada visual scene group"
+    },
+    {
+      "mesh": 0,
+      "name": "Material2"
+    },
+    {
+      "mesh": 1,
+      "name": "Material2"
+    },
+    {
+      "children": [
+        5
+      ],
+      "name": "SketchUp"
+    },
+    {
+      "children": [
+        6
+      ],
+      "matrix": [
+        0.6818823,
+        -0.7314619,
+        -5.551115e-17,
+        0.0,
+        0.1998263,
+        0.1862818,
+        0.9619608,
+        0.0,
+        -0.7036377,
+        -0.655944,
+        0.2731876,
+        0.0,
+        -59.32296,
+        -49.29742,
+        42.26405,
+        1.0
+      ],
+      "name": "skp_camera_Last_Saved_SketchUp_View"
+    },
+    {
+      "name": "ID1"
+    }
+  ],
+  "samplers": [
+    {
+      "magFilter": 9729,
+      "minFilter": 9987,
+      "wrapS": 10497,
+      "wrapT": 10497
+    }
+  ],
+  "scene": 0,
+  "scenes": [
+    {
+      "name": "Sketchfab_Scene",
+      "nodes": [
+        0
+      ]
+    }
+  ],
+  "textures": [
+    {
+      "sampler": 0,
+      "source": 0
+    },
+    {
+      "sampler": 0,
+      "source": 1
+    },
+    {
+      "sampler": 0,
+      "source": 2
+    },
+    {
+      "sampler": 0,
+      "source": 3
+    },
+    {
+      "sampler": 0,
+      "source": 4
+    }
+  ]
+}
